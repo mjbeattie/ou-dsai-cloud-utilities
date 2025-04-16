@@ -55,6 +55,9 @@ def main():
     # Convert the date field to a string for Meridian
     wilsonpdf['date'] = wilsonpdf['date'].astype(str)
 
+    # Get the number of rows in the dataframe
+    n_times = len(wilsonpdf)
+
     # Map dataframe columns to Meridian variables.  Note, we can ignore media impressions by setting media equal to spend.
     coord_to_columns = load.CoordToColumns(
         time='date',
@@ -114,7 +117,7 @@ def main():
 
     model_spec = spec.ModelSpec(
         prior=prior,
-        knots=12
+        knots=n_times
         )
 
 
@@ -133,7 +136,7 @@ def main():
     logging.info("Posterior sampling complete.")
 
     # Save the model
-    file_path='wilson_mmm_control_12knots_priors.pkl'
+    file_path='/home/mjbeattie_ou_edu/wilson_mmm_control_n_timesknots_priors.pkl'
     model.save_mmm(mmm, file_path)
     print('Model saved to', file_path) 
 

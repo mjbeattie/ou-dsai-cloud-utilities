@@ -7,6 +7,7 @@ Tests access to BigQuery from a GCP VM
 
 
 from google.cloud import bigquery
+import argparse
 
 def main():
     # Initialize BigQuery client (automatically picks up credentials)

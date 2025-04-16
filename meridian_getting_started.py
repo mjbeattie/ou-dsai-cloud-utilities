@@ -115,7 +115,7 @@ def main():
     logging.info("Posterior sampling complete.")
 
     # Save the model
-    file_path='~/saved_mmm.pkl'
+    file_path='/home/mjbeattie_ou_edu/saved_mmm.pkl'
     model.save_mmm(mmm, file_path)
     print('Model saved to', file_path) 
 
