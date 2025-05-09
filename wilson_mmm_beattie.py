@@ -117,12 +117,12 @@ def main():
 
     model_spec = spec.ModelSpec(
         prior=prior,
-        knots=n_times
+        knots=n_times-1
         )
 
 
     # Configure the Meridian model using default priors
-    mmm = model.Meridian(input_data=data)
+    mmm = model.Meridian(input_data=data, model_spec=model_spec)
 
     # Use the sample_prior() and sample_posterior() methods to to obtain samples.  Log run times
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -136,7 +136,7 @@ def main():
     logging.info("Posterior sampling complete.")
 
     # Save the model
-    file_path='/home/mjbeattie_ou_edu/wilson_mmm_control_n_timesknots_priors.pkl'
+    file_path='/home/mjbeattie_ou_edu/wilson_mmm_control_ntimesknots_priors.pkl'
     model.save_mmm(mmm, file_path)
     print('Model saved to', file_path) 
 
