@@ -27,6 +27,9 @@ conda install -y statsmodels xgboost lightgbm -c conda-forge
 # Install Google Cloud libraries
 pip install google-cloud-bigquery google-cloud-storage google-cloud-compute
 
+# Install Pandas to BigQuery connector
+pip install db-dtypes
+
 # Test the environment
 echo "Testing the environment..."
 

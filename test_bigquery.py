@@ -1,5 +1,5 @@
 """
-test_bigquery.py
+test_bigquery2.py
 
 Tests access to BigQuery from a GCP VM
 
@@ -14,18 +14,15 @@ def main():
     client = bigquery.Client()
 
     # Define a public dataset query
-    query = "SELECT * FROM `ou-dsa5900.mmm_spring2025.wilson_mmm_view`"
+    query = "SELECT * FROM `ou-dsa5900-student1.test_dataset.test_table`"
 
     # Run the query and load into pandas dataframe
     query_job = client.query(query)
     result = query_job.result()
-    wilsonpdf = result.to_dataframe()
-
-    # Convert the date field to a string for Meridian
-    wilsonpdf['date'] = wilsonpdf['date'].astype(str)
+    testpdf = result.to_dataframe()
 
     # Print header from pdf
-    print(wilsonpdf.head())
+    print(testpdf.head())
 
 
 if __name__ == '__main__':
