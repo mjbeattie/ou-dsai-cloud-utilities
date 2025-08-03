@@ -1,9 +1,0 @@
-name: meridian_mmm
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - python=3.11.13
-  - pip
-  - pip:
-    - -r mmm_requirements.txt
