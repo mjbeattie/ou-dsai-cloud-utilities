@@ -1,4 +1,4 @@
-﻿name: meridian_mmm
+﻿name: meridian_mmm_cpu
 channels:
   - defaults
   - https://repo.anaconda.com/pkgs/main
@@ -116,4 +116,5 @@ dependencies:
       - wrapt==1.17.2
       - xarray==2025.7.1
       - xarray-einstats==0.9.1
-prefix: C:\Users\mjbea\anaconda3\envs\meridian_mmm
+prefix: C:\Users\mjbea\anaconda3\envs\meridian_mmm_cpu
+
